@@ -1,0 +1,17 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.cell {
+  margin: 2px;
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+}
