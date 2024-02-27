@@ -1,5 +1,6 @@
 body{
   margin: 0;
+  background-color: rgb(215, 215, 215);
 }
 
 .header{
@@ -38,4 +39,5 @@ body{
   border: 1px solid black;
   box-sizing: border-box;
   flex: 1;
+  background-color: white;
 }
