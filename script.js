@@ -1,5 +1,5 @@
-let columns = 64;
-let rows = 64;
+let columns = 6;
+let rows = 6;
 
 const grid = document.querySelector('.container');
 
@@ -14,3 +14,16 @@ for (let i = 0; i < columns; i++){
     }
     grid.appendChild(column);
 }
+
+let hover = document.querySelectorAll(".cell");
+for (const hoverColor of hover){
+    hoverColor.addEventListener("mouseover", () =>{
+        hoverColor.style.backgroundColor = "blue";
+    });
+}
+
+// for (const hoverColor of hover){
+//     hoverColor.addEventListener("mouseout", () =>{
+//         hoverColor.style.backgroundColor = "";
+//     });
+// }
