@@ -1,4 +1,6 @@
 const grid = document.querySelector('.container');
+const btn = document.querySelector(".grid-button");
+const randomBtn = document.querySelector(".random-button");
 
 function gridSet(gridNum){
     while (grid.firstChild) {
@@ -16,8 +18,8 @@ function gridSet(gridNum){
       grid.appendChild(column);
     }
 }
-
-gridSet(16);
+gridNum = 16;
+gridSet(gridNum);
 paintCells();
 
 function paintCells(){
@@ -26,10 +28,8 @@ function paintCells(){
         hoverColor.addEventListener("mouseover", () =>{
         hoverColor.style.backgroundColor = "black";
     });
+    }
 }
-
-}
-const btn = document.querySelector("button");
 
 btn.addEventListener('click', () => {
 const userInput = window.prompt('Enter a new grid size (max 100)');
@@ -43,8 +43,13 @@ if(isNaN(userInput)){
         gridNum = 16;
     }
     gridSet(gridNum);
+    paintCells();
+    }   
+})
+
+randomBtn.addEventListener('click', () => {
+    gridSet(gridNum);
     randomColors();
-}
 })
 
 function getRandomColor(){
