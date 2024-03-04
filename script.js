@@ -18,9 +18,9 @@ function gridSet(gridNum){
 }
 
 gridSet(16);
-hovering();
+paintCells();
 
-function hovering(){
+function paintCells(){
     let hover = document.querySelectorAll(".cell"); 
     for (const hoverColor of hover){
         hoverColor.addEventListener("mouseover", () =>{
@@ -39,15 +39,27 @@ if(isNaN(userInput)){
     gridNum = Number(userInput);
     if (gridNum > 100){
         gridNum = 100;
+    } else if (gridNum == "" || gridNum == null){
+        gridNum = 16;
     }
     gridSet(gridNum);
-    hovering();
+    randomColors();
 }
-
 })
 
-// for (const hoverColor of hover){
-//     hoverColor.addEventListener("mouseout", () =>{
-//         hoverColor.style.backgroundColor = "";
-//     });
-// }
+function getRandomColor(){
+    let red = String(Math.floor(Math.random() * 255));
+    let green = String(Math.floor(Math.random() * 255));
+    let blue = String(Math.floor(Math.random() * 255));
+
+    return `rgb(${red}, ${green}, ${blue})`;
+}
+
+function randomColors(){
+    let hover = document.querySelectorAll(".cell");
+    for (const hoverRandomColor of hover){
+        hoverRandomColor.addEventListener("mouseover", () =>{
+        hoverRandomColor.style.backgroundColor = getRandomColor();
+        });
+    }
+}
